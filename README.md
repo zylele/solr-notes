@@ -16,11 +16,11 @@
 
 - Leader：赢得选举的Shard replicas，每个Shard有多个replicas，这几个Replicas需要选举确定一个Leader。选举可以发生在任何时间。当进行索引操作时，SolrCloud将索引操作请求传到此Shard对应的leader，leader再分发它们到全部Shard的replicas
 
-![](https://raw.githubusercontent.com/zylele/solr-notes/master/screenshots/solr/SolrCloud逻辑图.png)
+![](https://raw.githubusercontent.com/zylele/solr-notes/master/screenshots/solr/logic.png)
 
 在SolrCloud模式下，Collection是访问Cluster的入口。Collection是一个逻辑存在的东西，可以跨Node，在任意节点上都可以访问Collection；Shard也是逻辑存在的，因此Shard也是可以跨Node的；一个Shard下面可以包含0个或者多个replica，但1个Shard下面只能包含一个leader
 
-![](https://raw.githubusercontent.com/zylele/solr-notes/master/screenshots/solr/SolrCloud工作模式.png)
+![](https://raw.githubusercontent.com/zylele/solr-notes/master/screenshots/solr/work.png)
 
 SolrCloud中包含有多个Solr Instance，而每个Solr Instance中包含有多个Solr Core，Solr Core对应着一个可访问的Solr索引资源Replica，当Solr Client通过Collection访问Solr集群的时候，便可以通过Shard分片找到对应的replica即SolrCore，从而就可以访问索引文档了
 
