@@ -29,6 +29,7 @@ SolrCloud中包含有多个Solr Instance，而每个Solr Instance中包含有多
 起两个实例，指定zk及solr端口
 
 `solr start -cloud -z 127.0.0.1:2181 -p 8983`
+
 `solr start -cloud -z 127.0.0.1:2181 -p 8984`
 
 创建集合
